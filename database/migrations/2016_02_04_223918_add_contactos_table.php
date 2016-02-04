@@ -13,7 +13,7 @@ class AddContactosTable extends Migration
     public function up()
     {
         Schema::create('contactos', function (Blueprint $table) {
-            $table->increments('id');
+             $table->increments('id');
             $table->string('nombre', 50);
             $table->string('apellidos', 50);
             $table->string('profesion', 50);
@@ -26,9 +26,9 @@ class AddContactosTable extends Migration
             $table->string('web', 40);
             $table->string('github', 40);
             // llave foránea
-            $table->integer('id_user')->unsigned();
+            $table->integer('user_id')->unsigned();
 
-            $table->foreign('id_user')
+            $table->foreign('user_id')
                   ->references('id')
                   ->on('users')
                   ->onDelete('cascade');

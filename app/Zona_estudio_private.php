@@ -10,7 +10,7 @@ class Zona_estudio_private extends Model
 
     protected $fillable = ['titulo', 'descripcion', 'github',
                            'videos', 'visto', 'web', 'repaso',
-                           'user_id'];
+                           'user_id', 'category_id'];
 
     public function user(){
     	return $this->belongsTo('App\User'); // Uno a muchos

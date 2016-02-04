@@ -45,4 +45,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function Zona_estudio_privates(){
         return $this->hasMany('App\Zona_estudio_private'); // 1 a muchos
     }
+
+    public function Proyectos(){
+        return $this->hasMany('App\Proyecto'); // 1 a muchos
+    }
 }

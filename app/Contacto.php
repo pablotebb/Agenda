@@ -11,7 +11,7 @@ class Contacto extends Model
     protected $fillable = ['nombre', 'apellidos', 'profesion',
                            'telefono', 'direccion', 'email',
                            'linkedin', 'twitter', 'facebook',
-                           'web', 'github', 'id_user'];
+                           'web', 'github', 'user_id'];
 
 
     public function user(){

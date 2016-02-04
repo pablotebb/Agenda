@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddProyectosTable extends Migration
+class AddZonaEstudioPrivateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,22 +12,27 @@ class AddProyectosTable extends Migration
      */
     public function up()
     {
-        Schema::create('proyectos', function (Blueprint $table) {
+        Schema::create('zona_estudio_private', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo', 25);
-            $table->text('idea');
+            $table->text('descripcion');
             $table->string('github', 40);
-            $table->boolean('estado');
-            $table->boolean('ambito');
-            $table->boolean('programadores');
-            $table->boolean('diseñadores');
-            $table->boolean('marketing');
-            //llave foranea
+            $table->string('videos', 40);
+            $table->boolean('visto');
+            $table->string('web');
+            $table->integer('repaso');
+            //llave foránea
             $table->integer('user_id')->unsigned();
+            $table->integer('category_id')->unsigned();
 
             $table->foreign('user_id')
                   ->references('id')
                   ->on('users')
+                  ->onDelete('cascade');
+
+            $table->foreign('category_id')
+                  ->references('id')
+                  ->on('categories')
                   ->onDelete('cascade');
 
             $table->timestamps();
@@ -41,6 +46,6 @@ class AddProyectosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('proyectos');
+        Schema::drop('zona_estudio_private');
     }
 }

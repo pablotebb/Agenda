@@ -8,8 +8,7 @@ class Category extends Model
 {
     protected $table = "categories";
 
-    protected $fillable = ['categorianombre', 'imagen', 'zona_estudio_free_id',
-                           'zona_estudio_private_id'];
+    protected $fillable = ['categorianombre', 'imagen'];
 
 
     public function Zona_estudio_frees(){

@@ -10,5 +10,9 @@ class Proyecto extends Model
 
     protected $fillable = ['titulo', 'idea', 'github',
                            'estado', 'ambito', 'programadores',
-                           'disenadores', 'marketing', 'user_id'];
+                           'diseñadores', 'marketing', 'user_id'];
+
+    public function user(){
+    	return $this->belongsTo('App\User'); // 1 a muchos
+    }
 }

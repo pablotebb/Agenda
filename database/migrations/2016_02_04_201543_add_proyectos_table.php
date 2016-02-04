@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddZonaEstudioFreeTable extends Migration
+class AddProyectosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,17 @@ class AddZonaEstudioFreeTable extends Migration
      */
     public function up()
     {
-        Schema::create('zona_estudio_free', function (Blueprint $table) {
+        Schema::create('proyectos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo', 25);
-            $table->text('descripcion');
+            $table->text('idea');
             $table->string('github', 40);
-            $table->string('videos', 40);
-            $table->boolean('visto');
-            $table->integer('repaso');
-            //llave foránea
+            $table->boolean('estado');
+            $table->boolean('ambito');
+            $table->boolean('programadores');
+            $table->boolean('disenadores');
+            $table->boolean('marketing');
+            //llave foranea
             $table->integer('user_id')->unsigned();
 
             $table->foreign('user_id')
@@ -39,6 +41,6 @@ class AddZonaEstudioFreeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('zona_estudio_free');
+        Schema::drop('proyectos');
     }
 }
