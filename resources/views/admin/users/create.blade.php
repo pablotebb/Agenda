@@ -34,7 +34,7 @@
 
 		<div class="form-group">
 			{!! Form::label('name', 'Nombre') !!}
-			{!! Form::text('name',
+			{!! Form::text('nombre',
 			                null,
 			                ['class' => 'form-control',
 			                 'placeholder' => 'Nombre completo',
