@@ -35,10 +35,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::resource('categories', 'CategoriesController');
 
-
-	Route::get('categories/{id}/destroy', [
+   	Route::get('categories/{id}/destroy', [
     	'uses' => 'CategoriesController@destroy',
     	'as'   => 'admin.categories.destroy'
+    ]);
+
+    Route::resource('contactos', 'ContactosController');
+    Route::get('contactos/{id}/destroy', [
+      'uses' => 'ContactosController@destroy',
+      'as'   => 'admin.contactos.destroy'
     ]);
 });
 
@@ -55,5 +60,3 @@ Route::get('admin/auth/logout', [
     'uses' => 'Auth\AuthController@getLogout',
     'as'   => 'admin.auth.logout'
 ]);
-
-
