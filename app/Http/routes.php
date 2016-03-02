@@ -45,6 +45,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
       'uses' => 'ContactosController@destroy',
       'as'   => 'admin.contactos.destroy'
     ]);
+
+    Route::resource('zonaestudiogratis', 'Zona_Estudio_FreesController');
+    Route::get('zonaestudiogratis/{id}/destroy', [
+      'uses' => 'Zona_Estudio_FreesController@destroy',
+      'as'   => 'admin.zonaestudiogratis.destroy'
+    ]);
 });
 
 // Authentication routes...

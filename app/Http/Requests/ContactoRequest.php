@@ -34,7 +34,7 @@ class ContactoRequest extends Request
           'twitter' => 'max:60|required',
           'facebook' => 'max:60|required',
           'web' => 'max:80|required',
-          'github' => 'max:90|required',
+          'github' => 'max:90|required'
         ];
     }
 }

@@ -32,4 +32,13 @@ class Zona_estudio_free extends Model implements SluggableInterface
     public function category(){
     	return $this->belongsTo('App\Category'); // 1 a muchos
     }
+
+    public function scopeSearch($query, $titulo)
+    {
+    	return $query->where('titulo', 'LIKE', "%$titulo%");
+    }
+    public function scopeSearchTag($query, $titulo)
+    {
+        return $query->where('titulo', '=', $titulo);
+    }
 }
