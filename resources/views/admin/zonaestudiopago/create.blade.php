@@ -1,9 +1,9 @@
 @extends('admin.template.main')
 
-@section('title', 'Agregar zona de estudio gratis')
+@section('title', 'Agregar zona de estudio de pago')
 
 @section('content')
-	{!! Form::open(['route'  => 'admin.zonaestudiogratis.store',
+	{!! Form::open(['route'  => 'admin.zonaestudiopago.store',
 	               'method' => 'POST']) !!}
 
 		<div class="form-group">
@@ -46,6 +46,15 @@
 			{!! Form::radio('visto', 'Visto') !!}
 
 		</div>
+
+    <div class="form-group">
+      {!! Form::label('web', 'Web') !!}
+      {!! Form::number('web',
+      null,
+      ['class'      => 'form-control',
+      'placeholder' => 'web personal',
+      'required']) !!}
+    </div>
 
 		<div class="form-group">
 			{!! Form::label('repaso', 'Repaso') !!}

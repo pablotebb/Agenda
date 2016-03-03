@@ -34,4 +34,13 @@ class Zona_estudio_private extends Model implements SluggableInterface
     public function category(){
     	return $this->belongsTo('App\Category'); // Uno a muchos
     }
+
+    public function scopeSearch($query, $titulo)
+    {
+      return $query->where('titulo', 'LIKE', "%$titulo%");
+    }
+    public function scopeSearchTag($query, $titulo)
+    {
+        return $query->where('titulo', '=', $titulo);
+    }
 }
