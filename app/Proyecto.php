@@ -28,4 +28,13 @@ class Proyecto extends Model implements SluggableInterface
     public function user(){
     	return $this->belongsTo('App\User'); // 1 a muchos
     }
+
+    public function scopeSearch($query, $titulo)
+    {
+    	return $query->where('titulo', 'LIKE', "%$titulo%");
+    }
+    public function scopeSearchProyecto($query, $titulo)
+    {
+        return $query->where('titulo', '=', $titulo);
+    }
 }

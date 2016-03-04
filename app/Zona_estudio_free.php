@@ -37,7 +37,7 @@ class Zona_estudio_free extends Model implements SluggableInterface
     {
     	return $query->where('titulo', 'LIKE', "%$titulo%");
     }
-    public function scopeSearchTag($query, $titulo)
+    public function scopeSearchZona_estudio_free($query, $titulo)
     {
         return $query->where('titulo', '=', $titulo);
     }
