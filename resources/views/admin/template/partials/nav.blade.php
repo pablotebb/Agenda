@@ -43,6 +43,7 @@
               <li><a href="{{ route('admin.auth.logout') }}">Salir</a></li>
             </ul>
           </li>
+
         </ul>
       @endif
     </div><!-- /.navbar-collapse -->

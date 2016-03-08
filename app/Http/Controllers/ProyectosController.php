@@ -17,7 +17,7 @@ class ProyectosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $proyecto = Proyecto::search($request->titulo)->orderBy('id','DESC')->paginate(5);
         return view('admin.proyecto.index')->with('proyecto', $proyecto);

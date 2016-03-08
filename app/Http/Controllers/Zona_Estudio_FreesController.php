@@ -17,7 +17,7 @@ class Zona_Estudio_FreesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $estudiofree = Zona_estudio_free::search($request->titulo)->orderBy('id','DESC')->paginate(5);
         return view('admin.zonaestudiogratis.index')->with('estudiofree', $estudiofree);

@@ -17,7 +17,7 @@ class Zona_Estudio_PrivatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $estudioprivate = Zona_estudio_private::search($request->titulo)->orderBy('id','DESC')->paginate(5);
         return view('admin.zonaestudiopago.index')->with('estudioprivate', $estudioprivate);
