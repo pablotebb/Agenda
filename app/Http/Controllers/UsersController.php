@@ -87,7 +87,16 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //dd($request->all());
+        $user = User::find($id);
+        $user->fill($request->all());
+        //$user->name = $request->name;
+        //$user->email = $request->email;
+        //$user->type = $request->type;
+        $user->save();
+        //dd($user);
+        Flash::warning('El usuario ' . $user->nombre . ' ha sido editado con éxito!');
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -100,7 +109,7 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        Flash::error('El usuario ' . $user->name . ' a sido borrado de forma exitosa!');
+        Flash::error('El usuario ' . $user->nombre . ' a sido borrado de forma exitosa!');
         return redirect()->route('admin.users.index');
     }
 }

@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Editar usuario ' . $user->name)
+@section('title', 'Editar usuario ' . $user->nombre)
 
 @section('content')
 
@@ -9,9 +9,9 @@
 	                'method' => 'PUT']) !!}
 
 		<div class="form-group">
-			{!! Form::label('name', 'Nombre') !!}
-			{!! Form::text('name',
-			                $user->name,
+			{!! Form::label('nombre', 'Nombre') !!}
+			{!! Form::text('nombre',
+			                $user->nombre,
 			                ['class' => 'form-control',
 			                 'placeholder' => 'Nombre completo',
 			                 'required']) !!}

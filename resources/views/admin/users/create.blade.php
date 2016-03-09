@@ -33,7 +33,7 @@
 	                'method' => 'POST']) !!}
 
 		<div class="form-group">
-			{!! Form::label('name', 'Nombre') !!}
+			{!! Form::label('nombre', 'Nombre') !!}
 			{!! Form::text('nombre',
 			                null,
 			                ['class' => 'form-control',

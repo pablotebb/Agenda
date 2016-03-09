@@ -37,19 +37,19 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = ['password', 'remember_token'];
 
 
-    public function Contactos(){
+    public function contactos(){
         return $this->hasMany('App\Contacto'); // 1 a muchos
     }
 
-    public function Zona_estudio_frees(){
+    public function zona_estudio_frees(){
         return $this->hasMany('App\Zona_estudio_free'); // 1 a muchos
     }
 
-    public function Zona_estudio_privates(){
+    public function zona_estudio_privates(){
         return $this->hasMany('App\Zona_estudio_private'); // 1 a muchos
     }
 
-    public function Proyectos(){
+    public function proyectos(){
         return $this->hasMany('App\Proyecto'); // 1 a muchos
     }
 }
